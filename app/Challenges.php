@@ -11,6 +11,7 @@ class Challenges
         // load challenges
         $this->spoon();
         $this->languages();
+        $this->greet();
     }
 
     public function spoon()
@@ -46,6 +47,19 @@ class Challenges
 
             $arabic->name(), // "Arabic"
             $arabic->hello() // "مرحبا"
+        );
+    }
+
+    public function greet()
+    {
+        echo "\n03) Greet\n";
+
+        $english = new Languages\English();
+        $french = new Languages\French();
+
+        dump(
+            (new Greeter\Greeter($english))->greet("Sandi"), // "Hello Sandi"
+            (new Greeter\Greeter($french))->greet("Tom"), // "Bonjour Tom"
         );
     }
 }
