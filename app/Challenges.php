@@ -10,6 +10,7 @@ class Challenges
 
         // load challenges
         $this->spoon();
+        $this->languages();
     }
 
     public function spoon()
@@ -25,6 +26,26 @@ class Challenges
         dump(
             $spoon->howManyScoops(), // 2
             $runcible->howManyScoops() // 4
+        );
+    }
+
+    public function languages()
+    {
+        echo "\n02) Languages\n";
+
+        $english = new Languages\English();
+        $french = new Languages\French();
+        $arabic = new Languages\Arabic();
+
+        dump(
+            $english->name(), // "English"
+            $english->hello(), // "Hello"
+
+            $french->name(), // "French"
+            $french->hello(), // "Bonjour
+
+            $arabic->name(), // "Arabic"
+            $arabic->hello() // "مرحبا"
         );
     }
 }

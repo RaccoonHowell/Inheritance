@@ -12,7 +12,7 @@ class Spoon
         return $this;
     }
 
-    public function howManyScoops()
+    public function howManyScoops() : int
     {
         return $this->scoops;
     }
